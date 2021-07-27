@@ -91,44 +91,21 @@ class _UsersProfileState extends State<UsersProfile> {
                   ),
                   ),
                    SizedBox(height: 5,),
-                  Row(
-                    children: [
-                       Text("Company :",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                      ),
-                      SizedBox(width: 10,),
-                      Text(usersProfile!.company,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                      ),
-                    ],
+                  Text(usersProfile!.company,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  ),
                   ),
                   SizedBox(height: 5,),
-                  Row(
-                    children: [
-                      Text("Location :",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                      ),
-                      SizedBox(width: 10,),
-                      Text(usersProfile!.location,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w700,
-                        fontSize: 16,
-                      ),
-                      ),
-                    ],
+                  SizedBox(width: 10,),
+                  Text(usersProfile!.location,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16,
+                  ),
                   ),
                   
                 ],
@@ -136,8 +113,12 @@ class _UsersProfileState extends State<UsersProfile> {
             ],
           ),
           SizedBox(height: 30,),
-          GestureDetector(
-            onTap: (){
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+             
+             GestureDetector(
+                onTap: (){
                Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -146,11 +127,7 @@ class _UsersProfileState extends State<UsersProfile> {
                                 );
               
             },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-               
-               Column(children: [
+               child: Column(children: [
                   Text("Followers",
                         style: TextStyle(
                           color: Colors.black,
@@ -166,24 +143,24 @@ class _UsersProfileState extends State<UsersProfile> {
                         ),
                         ),
                ],),
-                Column(children: [
-                  Text("Following",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 25,
-                        ),
-                        ),
-                Text("(${usersProfile!.following})",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 20,
-                        ),
-                        ),
-               ],)
-              ],
-            ),
+             ),
+              Column(children: [
+                Text("Following",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 25,
+                      ),
+                      ),
+              Text("(${usersProfile!.following})",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 20,
+                      ),
+                      ),
+             ],)
+            ],
           ),
         
            //Divider(thickness: 2,color: Colors.black,)
