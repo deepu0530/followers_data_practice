@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:userfollowersdata_practice/models/usersprofile_model.dart';
 import 'package:userfollowersdata_practice/network_call/base_network.dart';
 import 'package:userfollowersdata_practice/pages/followers.dart';
+import 'package:userfollowersdata_practice/pages/subscriptions.dart';
 
 
 class UsersProfile extends StatefulWidget {
@@ -163,7 +164,30 @@ class _UsersProfileState extends State<UsersProfile> {
             ],
           ),
         
-           //Divider(thickness: 2,color: Colors.black,)
+           Padding(
+             padding: const EdgeInsets.only(top: 10,bottom: 10),
+             child: Divider(thickness: 1,color: Colors.black,),
+           ),
+
+
+           GestureDetector(
+             onTap: (){
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Subscriptions(
+                                  login: usersProfile!.login,
+                                  // avatar:userData!.items![index].avatarUrl
+                                )));
+             },
+             child: Text("Subscriptions",
+             style: TextStyle(
+               fontSize: 25,
+               fontWeight: FontWeight.w700,
+               color: Colors.purple,
+             ),
+             ),
+           )
         ],),
       ),
     
