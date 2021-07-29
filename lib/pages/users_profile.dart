@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:userfollowersdata_practice/models/usersprofile_model.dart';
 import 'package:userfollowersdata_practice/network_call/base_network.dart';
 import 'package:userfollowersdata_practice/pages/followers.dart';
+import 'package:userfollowersdata_practice/pages/organizations.dart';
 import 'package:userfollowersdata_practice/pages/subscriptions.dart';
 
 
@@ -185,6 +186,25 @@ class _UsersProfileState extends State<UsersProfile> {
                fontSize: 25,
                fontWeight: FontWeight.w700,
                color: Colors.purple,
+             ),
+             ),
+           ),
+           SizedBox(height: 20,),
+           GestureDetector(
+             onTap: (){
+                Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Organizations(
+                                  login: usersProfile!.login,
+                                  // avatar:userData!.items![index].avatarUrl
+                                )));
+             },
+             child: Text("Organizations",
+             style: TextStyle(
+               fontSize: 25,
+               fontWeight: FontWeight.w700,
+               color: Colors.red,
              ),
              ),
            )
